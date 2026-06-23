@@ -1,7 +1,11 @@
 import asyncio
+import edge_tts
 
-async def func():
-    print('Hello')
+TEXT = 'Привет я другой голос'
+VOICE =  'ru-RU-DmitryNeural'
 
+async def main():
+    communicate = edge_tts.Communicate(TEXT, VOICE)
+    await communicate.save('voice.mp3')
 
-asyncio.run(func())
+asyncio.run(main())
